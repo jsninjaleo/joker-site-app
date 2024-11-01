@@ -8,7 +8,7 @@ export const NextArrow: React.FC<ArrowProps> = ({
 }) => {
     return (
         <div
-            className={`${className} !flex !justify-center !items-center !absolute !top-[calc(50%-32px)] !z-10 !left-carouselRightArrow !h-1/6 !w-[5%]`}
+            className={`${className} !flex !justify-center !items-center !absolute !top-[calc(50%-32px)] !z-10 sm:!left-carouselRightArrow !left-[67%] !h-1/6 sm:!w-[5%] !w-[10%]`}
             style={{ ...style }}
             onClick={onClick}
         >

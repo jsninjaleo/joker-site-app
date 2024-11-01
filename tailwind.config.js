@@ -4,7 +4,10 @@ module.exports = {
     theme: {
         extend: {
             aspectRatio: {
-                carousel: "11 / 12",
+                carousel: "10 / 12",
+                carousel_two: "10/14",
+                city: "3/2",
+                flower: "2/1",
             },
             backgroundImage: {
                 small_linear: "linear-gradient(0deg, #9C96A2, #3A383C)",
@@ -17,9 +20,11 @@ module.exports = {
                 rock: "url('Assets/Img/rock.png')",
                 beach: "url('Assets/Img/beach.jpg')",
                 teammember: "url('Assets/Img/team_membercard.png')",
+                street: "url('Assets/Img/street.png')",
             },
             borderRadius: {
                 "1/2": "50%",
+                12: "12px",
             },
             colors: {
                 primary: "#F2EEE8",
@@ -89,7 +94,9 @@ module.exports = {
             },
             height: {
                 6.5: "26px",
+                32: "32vw",
                 38: "152px",
+                342: "342px",
             },
             letterSpacing: {
                 tightest: "-0.04em",
@@ -113,6 +120,8 @@ module.exports = {
                 39: "156Px",
             },
             screens: {
+                xxs: "320px",
+                xs: "425px",
                 "3xl": "1680px",
             },
             spacing: {
@@ -121,7 +130,9 @@ module.exports = {
                 carouselRightArrow: "81%",
             },
             width: {
+                23: "23vw",
                 30: "120px",
+                43: "43vw",
                 62.5: "250px",
             },
         },
