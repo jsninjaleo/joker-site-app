@@ -6,7 +6,7 @@ import { Home } from "./Pages";
 
 function App() {
     return (
-        <div>
+        <div className="overflow-x-hidden">
             <Header />
             <Router>
                 <Routes>

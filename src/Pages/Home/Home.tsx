@@ -212,10 +212,10 @@ export const Home: React.FC = () => {
                             <div className="absolute bottom-0 right-0">
                                 <div className="sm:h-28 h-20 sm:w-28 w-20 bg-city rounded-tl-full"></div>
                             </div>
-                            <div className="absolute bottom-0 sm:-right-24 -right-28 z-30">
+                            <div className="absolute bottom-0 sm:-right-12 -right-8 z-30 md:w-1/2 xs:w-1/3 w-1/2">
                                 <img
                                     src={Bird}
-                                    className="h-full xl:w-full w-2/3"
+                                    className="h-full w-full"
                                     alt="Bird"
                                 />
                             </div>
