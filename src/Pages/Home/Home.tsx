@@ -14,7 +14,6 @@ import {
     Left,
     Star,
     Team,
-    Arrow,
     Chain,
     Ghost,
     Right,
@@ -227,11 +226,7 @@ export const Home: React.FC = () => {
                                 <div
                                     className={`relative z-0 flex-none md:h-9 h-4 md:w-9 w-4 rounded-full border border-black ${item.circleColor} hover:bg-circle`}
                                 >
-                                    {index === 1 ? (
-                                        <Symbol color="white" />
-                                    ) : (
-                                        <Symbol color="black" />
-                                    )}
+                                    <Symbol color="black" />
                                 </div>
                             </div>
                         );
@@ -246,9 +241,9 @@ export const Home: React.FC = () => {
                     <div className="z-50">
                         <div className="w-full h-full md:aspect-auto aspect-city relative rounded-3xl border-8 border-city z-10 bg-city_img bg-cover bg-center">
                             <div className="absolute bottom-0 right-0">
-                                <div className="sm:h-28 h-20 sm:w-28 w-20 bg-city rounded-tl-full"></div>
+                                <div className="sm:h-28 xs:h-20 h-16 sm:w-28 xs:w-20 w-16 bg-city rounded-tl-full"></div>
                             </div>
-                            <div className="absolute bottom-0 sm:-right-12 -right-8 z-30 md:w-1/2 xs:w-1/3 w-1/2">
+                            <div className="absolute bottom-0 3xl:-right-16 2xl:-right-20 -right-12 z-30 3.5xl:w-1/6 3xl:w-1/4 lg:w-1/3 md:w-1/2 xs:w-1/3 w-1/2">
                                 <img
                                     src={Bird}
                                     className="h-full w-full"
@@ -576,12 +571,8 @@ export const Home: React.FC = () => {
                                     <p className="font-istok xl:text-xl md:text-base text-sm md:py-6 py-2 tracking-tightest">
                                         {item.content}
                                     </p>
-                                    <div className="md:h-9 h-4 md:w-9 w-4 rounded-full border border-black">
-                                        <img
-                                            src={Arrow}
-                                            className="h-full w-full"
-                                            alt="Arrow"
-                                        />
+                                    <div className="md:h-9 h-4 md:w-9 w-4 rounded-full border border-black hover:bg-circle z-30">
+                                        <Symbol color="black" />
                                     </div>
                                 </div>
                             </div>
@@ -657,7 +648,7 @@ export const Home: React.FC = () => {
                                     className=" sm:px-5 px-2 pb-24 lg:aspect-carousel aspect-carousel_two sm:!w-23 !w-43"
                                     key={index}
                                 >
-                                    <div className="w-full h-full rounded-3xl border-2 shadow-lg shadow-black border-black overflow-hidden">
+                                    <div className="w-full h-full rounded-3xl border shadow-md shadow-black border-black overflow-hidden">
                                         <img
                                             src={item.image}
                                             className="h-full w-full"

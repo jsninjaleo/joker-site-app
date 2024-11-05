@@ -1,5 +1,4 @@
 import Arrow from "../Assets/Img/arrow.svg";
-import WhiteArrow from "../Assets/Img/whitearrow .svg";
 import BeachOne from "../Assets/Img/beach_one.jpg";
 import BeachTwo from "../Assets/Img/beach_two.jpg";
 import BeachThree from "../Assets/Img/beach_three.jpg";
@@ -24,8 +23,8 @@ export const PRIMARY_CARD = [
         background: "bg-section_maincard",
         title: "Web design and UI",
         content: "This is the best we are at.",
-        circleColor: "bg-circle",
-        arrow: WhiteArrow,
+        circleColor: "bg-section_maincard",
+        arrow: Arrow,
     },
     {
         id: "3",
