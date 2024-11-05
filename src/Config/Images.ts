@@ -2,6 +2,7 @@ import Pig from "../Assets/Img/pig.jpg";
 import Shy from "../Assets/Img/shy.jpg";
 import Bird from "../Assets/Img/bird.png";
 import Blog from "../Assets/Img/blog.svg";
+import Cat from ".././Assets/Img/cat.png";
 import Fall from "../Assets/Img/fall.png";
 import Fish from "../Assets/Img/fish.svg";
 import Lady from "../Assets/Img/lady.svg";
@@ -31,8 +32,10 @@ import CircleMan from "../Assets/Img/circle_man.png";
 import RightFish from "../Assets/Img/right_fish.svg";
 import CloudThree from "../Assets/Img/cloud_three.png";
 import TeamMemeber from "../Assets/Img/team_member.png";
+import Ticket from "../Assets/Img/tick.svg";
 
 export {
+    Cat,
     Pig,
     Shy,
     Bird,
@@ -66,4 +69,5 @@ export {
     RightArrow,
     TeamMemeber,
     EvelopTitle,
+    Ticket,
 };

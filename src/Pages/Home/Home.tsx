@@ -1,7 +1,9 @@
-import React from "react";
+import { useState } from "react";
 import Slider from "react-slick";
 import YouTube from "react-youtube";
+import { Symbol } from "../../Element/SeverSectionCardSymbol";
 import {
+    Cat,
     Pig,
     Shy,
     Bird,
@@ -27,8 +29,8 @@ import {
     Community,
     RightFish,
     CloudThree,
-    TeamMemeber,
     EvelopTitle,
+    Ticket,
 } from "../../Config/Images";
 import {
     PRIMARY_CARD,
@@ -41,9 +43,9 @@ import { PrevArrow } from "../../Components/Arrow/PrevArrow";
 import {
     IMG_ITEMS,
     LOGO_ITEMS,
-    TICK_ITEMS,
     CAROUSEL_ITEMS,
     LETTER_ITEMS,
+    TEAM_ITEMS,
 } from "../../Config/ImgConstant";
 
 const opts = {
@@ -69,6 +71,37 @@ export const Home: React.FC = () => {
     const videoReady = (event: { target: { pauseVideo: () => void } }) => {
         event.target.pauseVideo();
     };
+    const [teamMembers, setTeamMembers] = useState(TEAM_ITEMS);
+
+    const showNextTeamMember = () => {
+        setTeamMembers((prevMembers) => {
+            const selectItemIndex = prevMembers.findIndex(
+                (item) => item.selected === true
+            );
+
+            const updatedMembers = prevMembers.map((item, index) => ({
+                ...item,
+                selected: index === (selectItemIndex + 1) % prevMembers.length,
+            }));
+
+            return updatedMembers;
+        });
+    };
+
+    const showPrevTeamMember = () => {
+        setTeamMembers((prevMembers) => {
+            const selectItemIndex = prevMembers.findIndex(
+                (item) => item.selected === true
+            );
+
+            const updatedMembers = prevMembers.map((item, index) => ({
+                ...item,
+                selected: index === (selectItemIndex + 3) % prevMembers.length,
+            }));
+
+            return updatedMembers;
+        });
+    };
 
     return (
         <div>
@@ -84,8 +117,8 @@ export const Home: React.FC = () => {
                         </div>
                     );
                 })}
-                <div className="col-start-1 bg-black w-full aspect-square"></div>
-                <div className="relative bg-radial w-full aspect-square lg:pl-7 pl-3">
+                <div className="col-start-1 bg-black w-full aspect-square z-30"></div>
+                <div className="relative bg-radial w-full aspect-square lg:pl-7 pl-3 z-30">
                     <div className="absolute top-1 w-full">
                         <div className=" w-1/3">
                             <img
@@ -112,10 +145,13 @@ export const Home: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex justify-end items-center gap-x-20 md:col-span-4 col-span-2">
+                <div className="flex justify-end items-center gap-x-20 md:col-span-4 col-span-2 group">
                     {LOGO_ITEMS.map((item, index) => {
                         return (
-                            <div className="md:block hidden" key={index}>
+                            <div
+                                className="relative z-20 animate-example animation-running group-hover:animation-paused cursor-pointer md:block hidden"
+                                key={index}
+                            >
                                 <img
                                     src={item.name}
                                     className="h-full w-full"
@@ -189,13 +225,13 @@ export const Home: React.FC = () => {
                                     {item.content}
                                 </p>
                                 <div
-                                    className={`flex-none md:h-9 h-4 md:w-9 w-4 rounded-full border border-black ${item.circleColor}`}
+                                    className={`relative z-0 flex-none md:h-9 h-4 md:w-9 w-4 rounded-full border border-black ${item.circleColor} hover:bg-circle`}
                                 >
-                                    <img
-                                        src={item.arrow}
-                                        className="h-full w-full"
-                                        alt="Arrow"
-                                    />
+                                    {index === 1 ? (
+                                        <Symbol color="white" />
+                                    ) : (
+                                        <Symbol color="black" />
+                                    )}
                                 </div>
                             </div>
                         );
@@ -212,10 +248,10 @@ export const Home: React.FC = () => {
                             <div className="absolute bottom-0 right-0">
                                 <div className="sm:h-28 h-20 sm:w-28 w-20 bg-city rounded-tl-full"></div>
                             </div>
-                            <div className="absolute bottom-0 sm:-right-24 -right-28 z-30">
+                            <div className="absolute bottom-0 sm:-right-12 -right-8 z-30 md:w-1/2 xs:w-1/3 w-1/2">
                                 <img
                                     src={Bird}
-                                    className="h-full xl:w-full w-2/3"
+                                    className="h-full w-full"
                                     alt="Bird"
                                 />
                             </div>
@@ -329,7 +365,7 @@ export const Home: React.FC = () => {
                     </div>
                     <div className="flex flex-col justify-between gap-3 sm:col-span-5 col-span-12">
                         <div className="relative flex justify-end items-center h-full border border-black rounded-3xl bg-cyan_600 sm:aspect-auto aspect-flower">
-                            <div className="absolute bottom-0 left-0 z-0 xl:w-1/4 sm:w-1/2 w-2/3">
+                            <div className="absolute bottom-0 left-0 z-0 sm:h-full h-auto sm:w-auto w-1/2">
                                 <img
                                     src={Flower}
                                     className="h-full w-full"
@@ -357,7 +393,7 @@ export const Home: React.FC = () => {
                         </div>
                     </div>
                     <div className="flex-col justify-between flex sm:hidden sm:gap-0 gap-4 sm:col-end-13 sm:col-span-5 col-span-12 pb-3">
-                        <div className="flex justify-around items-center border border-black rounded-3xl bg-orange_200">
+                        <div className="flex justify-between items-center border border-black rounded-3xl bg-orange_200">
                             <p className="font-jersey 2xl:text-7xl lg:text-4xl md:text-3xl text-2xl text-red_700 tracking-tightest py-6">
                                 No innovation
                             </p>
@@ -404,7 +440,7 @@ export const Home: React.FC = () => {
                         </div>
                     </div>
                     <div className="hidden sm:flex flex-col justify-between sm:gap-0 gap-4 sm:col-end-13 sm:col-span-5 col-span-12 pb-3">
-                        <div className="flex justify-around items-center border border-black rounded-3xl bg-orange_200">
+                        <div className="flex justify-between items-center border border-black rounded-3xl bg-orange_200 px-6">
                             <p className="font-jersey 2xl:text-7xl lg:text-4xl md:text-3xl text-2xl text-red_700 tracking-tightest py-6">
                                 No innovation
                             </p>
@@ -446,9 +482,9 @@ export const Home: React.FC = () => {
                 <div className="relative w-full z-10">
                     <div className="w-full flex flex-col items-center bg-rock bg-no-repeat bg-cover bg-zinc_950">
                         <div className="font-jersey 2xl:text-10xl xl:text-8xl sm:text-6xl text-5xl text-white 2xl:leading-100 leading-40 text-center tracking-tightest w-2/3">
-                            Cretivity
+                            Creativity
                         </div>
-                        <div className="font-jersey 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl text-white 2xl:leading-100 xl:leading-75 lg:leading-none sm:leading-2 tracking-tightest sm:w-2/3 w-3/4">
+                        <div className="font-jersey 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl text-white text-center 2xl:leading-100 xl:leading-75 lg:leading-none sm:leading-2 tracking-tightest">
                             can’t be bought. Unle$$...you will buy it from us.
                         </div>
                         <div className="bg-black font-istok xl:text-xl text-xs text-white tracking-tightest sm:leading-25 leading-none sm:w-2/3 w-3/4 px-6 xl:py-7 sm:py-4 py-1">
@@ -556,7 +592,7 @@ export const Home: React.FC = () => {
                     <img src={GhostMan} className="h-auto" alt="GhostMan" />
                 </div>
             </div>
-            <div className="grid lg:grid-cols-4 grid-cols-2">
+            <div className="grid lg:grid-cols-4 grid-cols-2 bg-primary">
                 {FORTH_CARD.map((item, index: number) => {
                     return (
                         <div
@@ -616,9 +652,9 @@ export const Home: React.FC = () => {
                 <div className="relative z-30 sm:py-10 py-3">
                     <Slider {...settings}>
                         {CAROUSEL_ITEMS.map((item, index) => {
-                            return item.isFullImage ? (
+                            return (
                                 <div
-                                    className="sm:px-5 px-2 pb-16 lg:aspect-carousel aspect-carousel_two sm:!w-23 !w-43"
+                                    className=" sm:px-5 px-2 pb-24 lg:aspect-carousel aspect-carousel_two sm:!w-23 !w-43"
                                     key={index}
                                 >
                                     <div className="w-full h-full rounded-3xl border-2 shadow-lg shadow-black border-black overflow-hidden">
@@ -629,21 +665,20 @@ export const Home: React.FC = () => {
                                         />
                                     </div>
                                 </div>
-                            ) : (
-                                <div className="sm:px-5 px-2 pb-16 lg:aspect-carousel aspect-carousel_two sm:!w-23 !w-43">
-                                    <div className="w-full h-full relative flex justify-center bg-section_maincard rounded-3xl">
-                                        <div className="absolute w-1/2 flex justify-center bottom-0 translate-y-1/2">
-                                            <img
-                                                src={item.image}
-                                                alt={`Plane-${index}`}
-                                                className="w-full h-full"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
                             );
                         })}
                     </Slider>
+                    <div className="absolute sm:right-[8%] right-[14%] 4xl:top-[5%] 3.5xl:top-[6%] 1.5xl:top-[8%] xl:top-[8.5%] 1.5md:top-[10%] sm:top-[12%] xs:top-[3%] top-[5%] sm:px-5 px-2 pb-24 lg:aspect-carousel aspect-carousel_two sm:!w-23 !w-43">
+                        <div className="w-full h-full relative flex justify-center bg-section_maincard rounded-3xl">
+                            <div className="absolute w-1/2 flex justify-center bottom-0 translate-y-1/2">
+                                <img
+                                    src={Cat}
+                                    alt="Cat"
+                                    className="w-full h-full before:bg-white"
+                                />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="relative bg-street bg-cover z-0 xl:px-36 md:px-24 px-12 pb-10">
@@ -656,77 +691,100 @@ export const Home: React.FC = () => {
                         &nbsp; of Jokers
                     </p>
                 </div>
-                <div className="grid md:grid-cols-2 grid-cols-1 xl:gap-x-40 lg:gap-x-24 gap-x-10 z-10 md:gap-y-0 gap-y-8 xl:pt-6 pt-4">
-                    <div>
-                        <div className="flex justify-between bg-black rounded-2xl w-full px-6 xl:py-4 py-1">
-                            <div className="flex justify-center items-center font-istok font-bold xl:text-2xl text-xs text-white tracking-tightest">
-                                Account executive
-                            </div>
-                            <div>
-                                <img src={Team} className="" alt="Team" />
-                            </div>
-                        </div>
-                        <div className="flex flex-col 2xl:gap-y-8 gap-y-6 xl:pt-9 pt-5 px-4">
-                            <p className="font-istok 2xl:text-xl lg:text-lg text-sm tracking-tightest">
-                                Account managers take care of every need you
-                                might have and outline the objectives to launch
-                                a successful campaign
-                            </p>
-                            <p className="font-istok 2xl:text-xl lg:text-lg text-sm tracking-tightest">
-                                With an industry pro in every nichel, we'll find
-                                the most relevant AM to lead your project.
-                            </p>
-                            {TICK_ITEMS.map((item, index: number) => {
-                                return (
-                                    <div key={index} className="flex">
+                {teamMembers.map((item, index) => {
+                    return (
+                        item.selected === true && (
+                            <div
+                                className="grid md:grid-cols-2 grid-cols-1 xl:gap-x-40 lg:gap-x-24 gap-x-10 z-10 md:gap-y-0 gap-y-8 xl:pt-6 pt-4"
+                                key={index}
+                            >
+                                <div>
+                                    <div className="flex justify-between bg-black rounded-2xl w-full px-6 xl:py-4 py-1">
+                                        <div className="flex justify-center items-center font-istok font-bold xl:text-2xl text-xs text-white tracking-tightest">
+                                            {item.title}
+                                        </div>
                                         <div>
                                             <img
-                                                src={item.img}
-                                                className="xl:h-full h-2/3 xl:w-full w-2/3"
-                                                alt="Tick"
+                                                src={Team}
+                                                className=""
+                                                alt="Team"
                                             />
                                         </div>
-                                        <p className="font-istok 2xl:text-xl lg:text-lg text-sm pl-2">
-                                            {item.title}
-                                        </p>
                                     </div>
-                                );
-                            })}
-                        </div>
-                    </div>
-                    <div className="bg-teammember bg-center bg-cover bg-no-repeat rounded-3xl border-4 border-black">
-                        <div className="flex justify-between items-center xl:px-6 px-4 xl:pt-12 md:pt-9 pt-3 xl:pb-6 md:pb-4 pb-2 border-b border-slate_800 z-10">
-                            <p className="font-istok 2xl:text-64 xl:text-5xl md:text-3xl text-xl font-bold tracking-tightest">
-                                Monica
-                            </p>
-                            <div className="flex xl:gap-6 gap-4">
-                                <div className="2xl:h-20 xl:h-14 sm:h-10 h-8 2xl:w-20 xl:w-14 sm:w-10 w-8">
-                                    <img
-                                        src={Left}
-                                        className="h-full w-full"
-                                        alt="Left"
-                                    />
+                                    <div className="flex flex-col 2xl:gap-y-8 gap-y-6 xl:pt-9 pt-5 px-4">
+                                        {item.first_content.map(
+                                            (item, index) => {
+                                                return (
+                                                    <p
+                                                        className="font-istok 2xl:text-xl lg:text-lg text-sm tracking-tightest"
+                                                        key={index}
+                                                    >
+                                                        {item}
+                                                    </p>
+                                                );
+                                            }
+                                        )}
+                                        {item.second_content.map(
+                                            (item, index) => {
+                                                return (
+                                                    <div
+                                                        key={index}
+                                                        className="flex"
+                                                    >
+                                                        <div>
+                                                            <img
+                                                                src={Ticket}
+                                                                className="xl:h-full h-2/3 xl:w-full w-2/3"
+                                                                alt="Tick"
+                                                            />
+                                                        </div>
+                                                        <p className="font-istok 2xl:text-xl lg:text-lg text-sm pl-2">
+                                                            {item}
+                                                        </p>
+                                                    </div>
+                                                );
+                                            }
+                                        )}
+                                    </div>
                                 </div>
-                                <div className="2xl:h-20 xl:h-14 sm:h-10 h-8 2xl:w-20 xl:w-14 sm:w-10 w-8">
-                                    <img
-                                        src={Right}
-                                        className="h-full w-full"
-                                        alt="Right"
-                                    />
+                                <div className="flex flex-col bg-teammember bg-center bg-cover bg-no-repeat rounded-3xl border-4 border-black">
+                                    <div className="flex justify-between items-center xl:px-6 px-4 xl:pt-12 md:pt-9 pt-3 xl:pb-6 md:pb-4 pb-2 border-b border-slate_800 z-10">
+                                        <p className="font-istok 2xl:text-64 xl:text-5xl md:text-3xl text-xl font-bold tracking-tightest">
+                                            {item.name}
+                                        </p>
+                                        <div className="flex xl:gap-6 gap-4">
+                                            <div className="2xl:h-20 xl:h-14 sm:h-10 h-8 2xl:w-20 xl:w-14 sm:w-10 w-8">
+                                                <img
+                                                    src={Left}
+                                                    className="h-full w-full"
+                                                    alt="Left"
+                                                    onClick={showPrevTeamMember}
+                                                />
+                                            </div>
+                                            <div className="2xl:h-20 xl:h-14 sm:h-10 h-8 2xl:w-20 xl:w-14 sm:w-10 w-8">
+                                                <img
+                                                    src={Right}
+                                                    className="h-full w-full"
+                                                    alt="Right"
+                                                    onClick={showNextTeamMember}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col justify-end items-center pt-10">
+                                        <div className="1.5xl:h-490 lg:h-[400px] xs:h-[350px] 1.5xl:w-450 lg:w-[260px] xs:w-[230px] w-[200px]">
+                                            <img
+                                                src={item.img}
+                                                className="h-full w-full"
+                                                alt="TeamMember"
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="flex flex-col justify-end items-center">
-                            <div className="w-4/5">
-                                <img
-                                    src={TeamMemeber}
-                                    className="h-full w-full"
-                                    alt="TeamMember"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        )
+                    );
+                })}
                 <div className="absolute left-0 -bottom-16 md:block hidden">
                     <img
                         src={Lady}
@@ -762,13 +820,13 @@ export const Home: React.FC = () => {
                             />
                         </div>
                         <div className="2xl:p-6 p-2">
-                            <div className="font-istok font-bold 2xl:text-xl text-base tracking-tightest xl:py-7 py-3 border-b border-slate_50">
+                            <div className="font-istok font-bold 2xl:text-xl text-base tracking-tightest hover:underline hover:underline-offset-4 xl:py-7 py-3 border-b border-slate_50 hover:text-header_button cursor-pointer">
                                 <p>
                                     Complete guide to lead generation
                                     outsourcing in B2B
                                 </p>
                             </div>
-                            <div className="font-istok font-bold 2xl:text-xl text-base tracking-tightest xl:py-7 py-3 border-b border-slate_50">
+                            <div className="font-istok font-bold 2xl:text-xl text-base tracking-tightest hover:underline hover:underline-offset-4 xl:py-7 py-3 border-b border-slate_50 hover:text-header_button cursor-pointer">
                                 <p>
                                     B2B appointment setting costs & pricing
                                     models explained
@@ -797,17 +855,15 @@ export const Home: React.FC = () => {
                             />
                         </div>
                         <div className="2xl:p-6 p-2">
-                            <div className="font-istok font-bold 2xl:text-xl text-base tracking-tightest xl:py-7 py-3 border-b border-slate_50">
+                            <div className="font-istok font-bold 2xl:text-xl text-base tracking-tightest hover:underline hover:underline-offset-4 xl:py-7 py-3 border-b border-slate_50 hover:text-header_button cursor-pointer">
                                 <p>
                                     SEO podcast: kas slypi už sėkmingo pardavimo
                                 </p>
                             </div>
-                            <div className="font-inter font-bold 2xl:text-xl text-base text-header_button tracking-tightest xl:py-7 py-3 border-b border-slate_50">
-                                <p className="underline decoration-header_button underline-offset-4">
-                                    Dizaino pavyzdžių galerija
-                                </p>
+                            <div className="font-inter font-bold 2xl:text-xl text-base hover:underline hover:underline-offset-4 hover:text-header_button cursor-pointer tracking-tightest xl:py-7 py-3 border-b border-slate_50">
+                                Dizaino pavyzdžių galerija
                             </div>
-                            <div className="font-istok font-bold 2xl:text-xl text-base tracking-tightest xl:py-7 py-3">
+                            <div className="font-istok font-bold 2xl:text-xl text-base tracking-tightest hover:underline hover:underline-offset-4    xl:py-7 py-3 hover:text-header_button cursor-pointer">
                                 SEO podcast: kas slypi už sėkmingo pardavimo
                             </div>
                         </div>
@@ -833,13 +889,13 @@ export const Home: React.FC = () => {
                             />
                         </div>
                         <div className="2xl:p-6 p-2">
-                            <div className="font-istok font-bold 2xl:text-xl text-base tracking-tightest xl:py-7 py-3 border-b border-slate_50">
+                            <div className="font-istok font-bold 2xl:text-xl text-base tracking-tightest hover:underline hover:underline-offset-4 xl:py-7 py-3 border-b border-slate_50 hover:text-header_button cursor-pointer">
                                 <p>
                                     Complete guide to lead generation
                                     outsourcing in B2B
                                 </p>
                             </div>
-                            <div className="font-istok font-bold 2xl:text-xl text-base tracking-tightest xl:py-7 py-3 border-b border-slate_50">
+                            <div className="font-istok font-bold 2xl:text-xl text-base tracking-tightest hover:underline hover:underline-offset-4 xl:py-7 py-3 border-b border-slate_50 hover:text-header_button cursor-pointer">
                                 <p>
                                     B2B appointment setting costs & pricing
                                     models explained

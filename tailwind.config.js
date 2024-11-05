@@ -3,13 +3,17 @@ module.exports = {
     content: ["./src/**/*.{js,jsx,ts,tsx}"],
     theme: {
         extend: {
+            animation: {
+                example: "example 10s ease-in-out infinite running",
+            },
             aspectRatio: {
                 carousel: "10 / 12",
                 carousel_two: "10/14",
                 city: "3/2",
-                flower: "2/1",
+                flower: "3/1",
             },
             backgroundImage: {
+                arrow: "url('Assets/Img/arrow.svg')",
                 small_linear: "linear-gradient(0deg, #9C96A2, #3A383C)",
                 card_linear: "linear-gradient(0deg, #8792C8, #44539D, #1E1338)",
                 linear: "linear-gradient(180deg, #132A9B, #070E35)",
@@ -97,6 +101,17 @@ module.exports = {
                 32: "32vw",
                 38: "152px",
                 342: "342px",
+                490: "490px",
+            },
+            keyframes: {
+                example: {
+                    "0%": {
+                        right: "-100%",
+                    },
+                    "100%": {
+                        right: "100%",
+                    },
+                },
             },
             letterSpacing: {
                 tightest: "-0.04em",
@@ -122,7 +137,11 @@ module.exports = {
             screens: {
                 xxs: "320px",
                 xs: "425px",
+                "1.5md": "900px",
+                "1.5xl": "1360px",
                 "3xl": "1680px",
+                "3.5xl": "1900px",
+                "4xl": "2300px",
             },
             spacing: {
                 "1/2": "47%",
@@ -134,8 +153,16 @@ module.exports = {
                 30: "120px",
                 43: "43vw",
                 62.5: "250px",
+                450: "450px",
             },
         },
     },
-    plugins: [],
+    plugins: [
+        function ({ addUtilities }) {
+            addUtilities({
+                ".animation-paused": { "animation-play-state": "paused" },
+                ".animation-running": { "animation-play-state": "running" },
+            });
+        },
+    ],
 };

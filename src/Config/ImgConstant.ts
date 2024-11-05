@@ -1,11 +1,11 @@
 import Beast from "../Assets/Img/beast.jpg";
-import Cat from "../Assets/Img/cat.png";
 import Flame from "../Assets/Img/flame.jpg";
 import Man from "../Assets/Img/man.jpg";
 import Woman from "../Assets/Img/woman.jpg";
+import Man_Two from "../Assets/Img/shy.jpg";
+import Woman_Two from "../Assets/Img/team_member.png";
 import PrimaryLogo from "../Assets/Img/primaryLogo.png";
 import SecondaryLogo from "../Assets/Img/secondaryLogo.png";
-import Ticket from "../Assets/Img/tick.svg";
 import FirstPlane from "../Assets/Img/plane_one.png";
 import SecondPlane from "../Assets/Img/plane_two.png";
 import ThirdPlane from "../Assets/Img/plane_three.png";
@@ -39,10 +39,6 @@ export const CAROUSEL_ITEMS = [
         isFullImage: true,
     },
     {
-        image: Cat,
-        isFullImage: false,
-    },
-    {
         image: FirstPlane,
         isFullImage: true,
     },
@@ -63,20 +59,69 @@ export const LETTER_ITEMS = [
     },
 ];
 
-export const TICK_ITEMS = [
+export const TEAM_ITEMS = [
     {
         id: "1",
-        img: Ticket,
-        title: "Pajamų kontrolė ir biudžeto valdymas",
+        title: "CEO",
+        first_content: [
+            "Account managers take care of every need you might have and outline the objectives to launch a successful campaign",
+            "With an industry pro in every nichel, we'll find the most relevant AM to lead your project.",
+        ],
+        second_content: [
+            "Pajamų kontrolė ir biudžeto valdymas",
+            "Aukščiausio lygio klientų aptarnavimas",
+            "Pajamų kontrolė ir biudžeto valdymas",
+        ],
+        name: "Monica",
+        img: Woman_Two,
+        selected: true,
     },
     {
         id: "2",
-        img: Ticket,
-        title: "Aukščiausio lygio klientų aptarnavimas",
+        title: "Development",
+        first_content: [
+            "Account managers take care of every need you might have and outline the objectives to launch a successful campaign",
+            "With an industry pro in every nichel, we'll find the most relevant AM to lead your project.",
+            "With an industry pro in every nichel, we'll find the most relevant AM to lead your project.",
+        ],
+        second_content: [
+            "Aukščiausio lygio klientų aptarnavimas",
+            "Pajamų kontrolė ir biudžeto valdymas",
+        ],
+        name: "Lamos",
+        img: Man,
+        selected: false,
     },
     {
         id: "3",
-        img: Ticket,
-        title: "Pajamų kontrolė ir biudžeto valdymas",
+        title: "Design",
+        first_content: [
+            "Account managers take care of every need you might have and outline the objectives to launch a successful campaign",
+            "With an industry pro in every nichel, we'll find the most relevant AM to lead your project.",
+        ],
+        second_content: [
+            "Pajamų kontrolė ir biudžeto valdymas",
+            "Aukščiausio lygio klientų aptarnavimas",
+            "Pajamų kontrolė ir biudžeto valdymas",
+        ],
+        name: "Alina",
+        img: Woman,
+        selected: false,
+    },
+    {
+        id: "4",
+        title: "Marketing",
+        first_content: [
+            "Account managers take care of every need you might have and outline the objectives to launch a successful campaign",
+            "With an industry pro in every nichel, we'll find the most relevant AM to lead your project.",
+            "With an industry pro in every nichel, we'll find the most relevant AM to lead your project.",
+        ],
+        second_content: [
+            "Aukščiausio lygio klientų aptarnavimas",
+            "Pajamų kontrolė ir biudžeto valdymas",
+        ],
+        name: "Paul",
+        img: Man_Two,
+        selected: false,
     },
 ];

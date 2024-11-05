@@ -1,7 +1,11 @@
 import { ArrowTwo } from "../../Config/Images";
 import { CircleMan } from "../../Config/Images";
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+    toggleModal: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = (props) => {
     return (
         <div className="bg-black xl:px-36 md:px-24 px-12">
             <div className="grid md:grid-cols-3 grid-cols-1">
@@ -16,7 +20,10 @@ export const Footer: React.FC = () => {
                             </p>
                         </div>
                         <div className="flex xs:flex-row flex-col items-center xl:gap-x-6 gap-x-4 xs:gap-y-0 gap-y-4">
-                            <div className="bg-header_button xl:px-6 md:px-4 px-2 xl:py-5 py-3">
+                            <div
+                                className="bg-header_button hover:bg-red-300 cursor-pointer xl:px-6 md:px-4 px-2 xl:py-5 py-3"
+                                onClick={props.toggleModal}
+                            >
                                 <div className="flex items-center justify-between xl:gap-x-4 gap-x-3">
                                     <p className="font-jersey 2xl:text-64 xl:text-6xl md:text-4xl sm:text-3xl text-4xl text-white leading-none tracking-tightest">
                                         DOWNLOAD
@@ -30,7 +37,7 @@ export const Footer: React.FC = () => {
                                 </p>
                             </div>
                             <div className="xs:pb-0 pb-5">
-                                <p className="border border-white xl:px-6 px-4 py-2 font-istok font-bold xl:text-lg text-sm text-white">
+                                <p className="border border-white hover:border-header_button xl:px-6 px-4 py-2 font-istok font-bold xl:text-lg text-sm text-white hover:text-header_button cursor-pointer">
                                     Contact CEO directly
                                 </p>
                             </div>
@@ -41,10 +48,10 @@ export const Footer: React.FC = () => {
                             <p className="font-istok font-bold xl:text-xl text-base text-white tracking-tightest">
                                 About
                             </p>
-                            <p className="font-istok xl:text-base text-sm text-slate_300 tracking-tightest">
+                            <p className="font-istok xl:text-base text-sm text-slate_300 hover:text-white hover:underline hover:decoration-white cursor-pointer tracking-tightest">
                                 About us
                             </p>
-                            <p className="font-istok xl:text-base text-sm text-slate_300 tracking-tightest">
+                            <p className="font-istok xl:text-base text-sm text-slate_300 hover:text-white hover:underline hover:decoration-white cursor-pointer tracking-tightest">
                                 Contacts
                             </p>
                         </div>
@@ -52,16 +59,16 @@ export const Footer: React.FC = () => {
                             <p className="font-istok font-bold xl:text-xl text-base text-white tracking-tightest">
                                 Services
                             </p>
-                            <p className="font-istok xl:text-base text-sm text-slate_300 tracking-tightest">
+                            <p className="font-istok xl:text-base text-sm text-slate_300 hover:text-white hover:underline hover:decoration-white cursor-pointer tracking-tightest">
                                 Redesign your website
                             </p>
-                            <p className="font-istok xl:text-base text-sm text-slate_300 tracking-tightest">
+                            <p className="font-istok xl:text-base text-sm text-slate_300 hover:text-white hover:underline hover:decoration-white cursor-pointer tracking-tightest">
                                 Web design and UI
                             </p>
-                            <p className="font-istok xl:text-base text-sm text-slate_300 tracking-tightest">
+                            <p className="font-istok xl:text-base text-sm text-slate_300 hover:text-white hover:underline hover:decoration-white cursor-pointer tracking-tightest">
                                 UX design
                             </p>
-                            <p className="font-istok xl:text-base text-sm text-slate_300 tracking-tightest">
+                            <p className="font-istok xl:text-base text-sm text-slate_300 hover:text-white hover:underline hover:decoration-white cursor-pointer tracking-tightest">
                                 Web development
                             </p>
                         </div>
