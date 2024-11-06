@@ -540,7 +540,7 @@ export const Home: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="relative bg-beach bg-cover bg-no-repeat w-full z-0 xl:px-36 md:px-24 px-12 lg:pb-80 sm:pb-60 pb-40">
+            <div className="relative bg-beach bg-cover bg-no-repeat w-full z-0 xl:px-36 md:px-24 px-12 lg:pb-80 sm:pb-60 pb-40 bg-primary">
                 <div className="relative grid lg:grid-cols-4 grid-cols-3 z-10">
                     <div className="lg:col-start-2 col-start-1 col-span-3 font-istok xl:text-xl md:text-base text-sm tracking-tightest md:pt-0 pt-2">
                         Absolutely no. Digital art is a combination of different
@@ -659,7 +659,7 @@ export const Home: React.FC = () => {
                             );
                         })}
                     </Slider>
-                    <div className="absolute lg:right-[6.4%] md:right-[5.8%] sm:right-[5.1%] xs:right-[10.6%] xxs:right-[9.6%] right-[9.2%] top-0 sm:px-5 px-2 pb-24 lg:aspect-carousel_cat md:aspect-[10/13.8] aspect-carousel_lg sm:!w-24vw !w-44vw">
+                    <div className="absolute sm:left-[68.5vw] left-[42.5vw] top-0 sm:px-5 px-2 pb-24 lg:aspect-carousel_cat md:aspect-[10/13.8] aspect-carousel_lg sm:!w-24vw !w-44vw">
                         <div className="w-full h-full relative flex justify-center bg-section_maincard rounded-3xl">
                             <div className="absolute w-1/2 flex justify-center bottom-0 translate-y-1/2">
                                 <img

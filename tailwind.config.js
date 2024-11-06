@@ -132,8 +132,8 @@ module.exports = {
                 b_3xl: "1900px", // between 3xl and 4xl
             },
             spacing: {
-                carouselLeftArrow: "76%",
-                carouselRightArrow: "82%",
+                carouselLeftArrow: "75vw",
+                carouselRightArrow: "81vw",
             },
             width: {
                 30: "120px",
