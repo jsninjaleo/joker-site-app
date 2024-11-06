@@ -11,7 +11,7 @@ import Star from "../Assets/Img/star.png";
 import Team from "../Assets/Img/team.svg";
 import WeTitle from "../Assets/Img/We.png";
 import Arrow from "../Assets/Img/arrow.svg";
-import Beach from "../Assets/Img/beach.jpg";
+import Beach from "../Assets/Img/beach.png";
 import Chain from "../Assets/Img/chain.png";
 import Ghost from "../Assets/Img/ghost.png";
 import Right from "../Assets/Img/right.svg";

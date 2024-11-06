@@ -243,7 +243,7 @@ export const Home: React.FC = () => {
                             <div className="absolute bottom-0 right-0">
                                 <div className="sm:h-28 xs:h-20 h-16 sm:w-28 xs:w-20 w-16 bg-city rounded-tl-full"></div>
                             </div>
-                            <div className="absolute bottom-0 3xl:-right-16 2xl:-right-20 -right-12 z-30 3.5xl:w-1/6 3xl:w-1/4 lg:w-1/3 md:w-1/2 xs:w-1/3 w-1/2">
+                            <div className="absolute bottom-0 3xl:-right-16 2xl:-right-20 -right-12 z-30 b_3xl:w-1/6 3xl:w-1/4 lg:w-1/3 md:w-1/2 xs:w-1/3 w-1/2">
                                 <img
                                     src={Bird}
                                     className="h-full w-full"
@@ -467,7 +467,7 @@ export const Home: React.FC = () => {
                     </p>
                 </div>
                 <div className="relative flex justify-center bg-zinc_950 xl:p-14 p-11 rounded-b-1/2">
-                    <div className="absolute sm:-bottom-2/3 xs:-bottom-[40%] xxs:-bottom-[30%] -bottom-[25%] sm:w-auto w-3/4">
+                    <div className="absolute sm:-bottom-2/3 xs:-bottom-[40%] 3xs:-bottom-[30%] -bottom-[25%] sm:w-auto w-3/4">
                         <img src={Fall} className="h-full w-full" alt="Fall" />
                     </div>
                 </div>
@@ -487,7 +487,7 @@ export const Home: React.FC = () => {
                             words.
                         </div>
                         <div className="sm:w-2/3 w-3/4 z-20 sm:py-9 py-3 mt-3">
-                            <div className="w-full h-32 rounded-12 overflow-hidden m-auto">
+                            <div className="w-full h-32vw rounded-12 overflow-hidden m-auto">
                                 <YouTube
                                     className="h-full"
                                     opts={opts}
@@ -640,12 +640,12 @@ export const Home: React.FC = () => {
                         </p>
                     </div>
                 </div>
-                <div className="relative z-30 sm:py-10 py-3">
+                <div className="relative z-30 sm:my-10 my-3">
                     <Slider {...settings}>
                         {CAROUSEL_ITEMS.map((item, index) => {
                             return (
                                 <div
-                                    className=" sm:px-5 px-2 pb-24 lg:aspect-carousel aspect-carousel_two sm:!w-23 !w-43"
+                                    className="sm:px-5 px-2 pb-24 lg:aspect-carousel aspect-carousel_lg sm:!w-23vw !w-43vw"
                                     key={index}
                                 >
                                     <div className="w-full h-full rounded-3xl border shadow-md shadow-black border-black overflow-hidden">
@@ -659,7 +659,7 @@ export const Home: React.FC = () => {
                             );
                         })}
                     </Slider>
-                    <div className="absolute sm:right-[8%] right-[14%] 4xl:top-[5%] 3.5xl:top-[6%] 1.5xl:top-[8%] xl:top-[8.5%] 1.5md:top-[10%] sm:top-[12%] xs:top-[3%] top-[5%] sm:px-5 px-2 pb-24 lg:aspect-carousel aspect-carousel_two sm:!w-23 !w-43">
+                    <div className="absolute lg:right-[6.4%] md:right-[5.8%] sm:right-[5.1%] xs:right-[10.6%] xxs:right-[9.6%] right-[9.2%] top-0 sm:px-5 px-2 pb-24 lg:aspect-carousel_cat md:aspect-[10/13.8] aspect-carousel_lg sm:!w-24vw !w-44vw">
                         <div className="w-full h-full relative flex justify-center bg-section_maincard rounded-3xl">
                             <div className="absolute w-1/2 flex justify-center bottom-0 translate-y-1/2">
                                 <img
@@ -672,7 +672,7 @@ export const Home: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="relative bg-street bg-cover z-0 xl:px-36 md:px-24 px-12 pb-10">
+            <div className="relative bg-street bg-cover bg-center z-0 xl:px-36 md:px-24 px-12 pb-10">
                 <div className="relative w-full text-center xl:py-4 py-2">
                     <p className="font-jersey 2xl:text-64 xl:text-5xl text-4xl 2xl:leading-64 leading-none tracking-tightest">
                         The &nbsp;
@@ -763,7 +763,7 @@ export const Home: React.FC = () => {
                                         </div>
                                     </div>
                                     <div className="flex flex-col justify-end items-center pt-10">
-                                        <div className="1.5xl:h-490 lg:h-[400px] xs:h-[350px] 1.5xl:w-450 lg:w-[260px] xs:w-[230px] w-[200px]">
+                                        <div className="b_xl:h-[490px] lg:h-[400px] xs:h-[350px] b_xl:w-[450px] lg:w-[260px] xs:w-[230px] w-[200px]">
                                             <img
                                                 src={item.img}
                                                 className="h-full w-full"

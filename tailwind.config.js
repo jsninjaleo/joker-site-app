@@ -8,7 +8,8 @@ module.exports = {
             },
             aspectRatio: {
                 carousel: "10 / 12",
-                carousel_two: "10/14",
+                carousel_cat: "10/11.7",
+                carousel_lg: "10/14",
                 city: "3/2",
                 flower: "3/1",
             },
@@ -22,7 +23,7 @@ module.exports = {
                 box_linear: "linear-gradient(0deg, #6880FF, #3F4D99)",
                 city_img: "url('Assets/Img/city.png')",
                 rock: "url('Assets/Img/rock.png')",
-                beach: "url('Assets/Img/beach.jpg')",
+                beach: "url('Assets/Img/beach.png')",
                 teammember: "url('Assets/Img/team_membercard.png')",
                 street: "url('Assets/Img/street.png')",
             },
@@ -70,10 +71,6 @@ module.exports = {
                 slate_800: "#414040",
                 zinc_950: "#090909",
             },
-            container: {
-                center: true,
-                padding: "144px",
-            },
             fontFamily: {
                 jersey: ['"Jersey 20"', "sans-serif"],
                 inter: ["Inter", "sans-serif"],
@@ -94,14 +91,9 @@ module.exports = {
             },
             gap: {
                 18: "72px",
-                350: "350px",
             },
             height: {
-                6.5: "26px",
-                32: "32vw",
-                38: "152px",
-                342: "342px",
-                490: "490px",
+                "32vw": "32vw",
             },
             keyframes: {
                 example: {
@@ -127,33 +119,29 @@ module.exports = {
                 132: "132px",
                 150: "150px",
             },
-            margin: {
-                750: "750px",
-            },
             padding: {
                 13: "52px",
                 39: "156Px",
             },
             screens: {
-                xxs: "320px",
+                "3xs": "320px",
+                xxs: "375px",
                 xs: "425px",
-                "1.5md": "900px",
-                "1.5xl": "1360px",
+                b_xl: "1360px", // between xl and xxl
                 "3xl": "1680px",
-                "3.5xl": "1900px",
-                "4xl": "2300px",
+                b_3xl: "1900px", // between 3xl and 4xl
             },
             spacing: {
-                "1/2": "47%",
-                carouselLeftArrow: "75%",
-                carouselRightArrow: "81%",
+                carouselLeftArrow: "76%",
+                carouselRightArrow: "82%",
             },
             width: {
-                23: "23vw",
                 30: "120px",
-                43: "43vw",
                 62.5: "250px",
-                450: "450px",
+                "23vw": "23vw",
+                "24vw": "24vw",
+                "43vw": "43vw",
+                "44vw": "44vw",
             },
         },
     },
