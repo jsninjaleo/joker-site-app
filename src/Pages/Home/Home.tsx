@@ -254,13 +254,13 @@ export const Home: React.FC = () => {
                     </div>
                     <div className="flex flex-col xl:gap-y-12 gap-y-6 z-10">
                         <div>
-                            <p className="font-jersey xl:text-64 md:text-4xl text-3xl text-white leading-none tracking-tightest">
+                            <p className="font-jersey xl:text-64 md:text-4xl text-3xl text-white xl:!leading-64 !leading-none tracking-tightest">
                                 On the internet everybody is equal.
-                                <span className="font-jersey xl:text-64 md:text-4xl text-3xl text-main_red leading-none tracking-tightest">
+                                <span className="font-jersey xl:text-64 md:text-4xl text-3xl text-main_red xl:!leading-64 !leading-none tracking-tightest">
                                     Thats not true.
                                 </span>
                             </p>
-                            <p className="font-jersey xl:text-64 md:text-4xl text-3xl text-white leading-none tracking-tightest">
+                            <p className="font-jersey xl:text-64 md:text-4xl text-3xl text-white xl:!leading-64 !leading-none tracking-tightest">
                                 Equal are those who limit themselves in their
                                 minds.
                             </p>
