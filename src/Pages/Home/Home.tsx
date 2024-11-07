@@ -812,13 +812,13 @@ export const Home: React.FC = () => {
                         </div>
                         <div className="2xl:p-6 p-2">
                             <div className="font-istok font-bold 2xl:text-xl text-base tracking-tightest hover:underline hover:underline-offset-4 xl:py-7 py-3 border-b border-slate_50 hover:text-header_button cursor-pointer">
-                                <p>
+                                <p className="w-fit">
                                     Complete guide to lead generation
                                     outsourcing in B2B
                                 </p>
                             </div>
                             <div className="font-istok font-bold 2xl:text-xl text-base tracking-tightest hover:underline hover:underline-offset-4 xl:py-7 py-3 border-b border-slate_50 hover:text-header_button cursor-pointer">
-                                <p>
+                                <p className="w-fit">
                                     B2B appointment setting costs & pricing
                                     models explained
                                 </p>
@@ -847,14 +847,14 @@ export const Home: React.FC = () => {
                         </div>
                         <div className="2xl:p-6 p-2">
                             <div className="font-istok font-bold 2xl:text-xl text-base tracking-tightest hover:underline hover:underline-offset-4 xl:py-7 py-3 border-b border-slate_50 hover:text-header_button cursor-pointer">
-                                <p>
+                                <p className="w-fit">
                                     SEO podcast: kas slypi už sėkmingo pardavimo
                                 </p>
                             </div>
-                            <div className="font-inter font-bold 2xl:text-xl text-base hover:underline hover:underline-offset-4 hover:text-header_button cursor-pointer tracking-tightest xl:py-7 py-3 border-b border-slate_50">
+                            <div className="font-inter font-bold 2xl:text-xl text-base hover:underline hover:underline-offset-4 hover:text-header_button cursor-pointer tracking-tightest xl:py-7 py-3 border-b border-slate_50 w-fit">
                                 Dizaino pavyzdžių galerija
                             </div>
-                            <div className="font-istok font-bold 2xl:text-xl text-base tracking-tightest hover:underline hover:underline-offset-4    xl:py-7 py-3 hover:text-header_button cursor-pointer">
+                            <div className="font-istok font-bold 2xl:text-xl text-base tracking-tightest hover:underline hover:underline-offset-4    xl:py-7 py-3 hover:text-header_button cursor-pointer w-fit">
                                 SEO podcast: kas slypi už sėkmingo pardavimo
                             </div>
                         </div>
@@ -881,13 +881,13 @@ export const Home: React.FC = () => {
                         </div>
                         <div className="2xl:p-6 p-2">
                             <div className="font-istok font-bold 2xl:text-xl text-base tracking-tightest hover:underline hover:underline-offset-4 xl:py-7 py-3 border-b border-slate_50 hover:text-header_button cursor-pointer">
-                                <p>
+                                <p className="w-fit">
                                     Complete guide to lead generation
                                     outsourcing in B2B
                                 </p>
                             </div>
                             <div className="font-istok font-bold 2xl:text-xl text-base tracking-tightest hover:underline hover:underline-offset-4 xl:py-7 py-3 border-b border-slate_50 hover:text-header_button cursor-pointer">
-                                <p>
+                                <p className="w-fit">
                                     B2B appointment setting costs & pricing
                                     models explained
                                 </p>

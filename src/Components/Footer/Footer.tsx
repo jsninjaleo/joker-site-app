@@ -37,9 +37,12 @@ export const Footer: React.FC<FooterProps> = (props) => {
                                 </p>
                             </div>
                             <div className="xs:pb-0 pb-5">
-                                <p className="border border-white hover:border-header_button xl:px-6 px-4 py-2 font-istok font-bold xl:text-lg text-sm text-white hover:text-header_button cursor-pointer">
+                                <a
+                                    className="border border-white hover:border-header_button xl:px-6 px-4 py-2 font-istok font-bold xl:text-lg text-sm text-white hover:text-header_button cursor-pointer"
+                                    href="mailto:info@jokerwebdesign.com"
+                                >
                                     Contact CEO directly
-                                </p>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -48,10 +51,10 @@ export const Footer: React.FC<FooterProps> = (props) => {
                             <p className="font-istok font-bold xl:text-xl text-base text-white tracking-tightest">
                                 About
                             </p>
-                            <p className="font-istok xl:text-base text-sm text-slate_300 hover:text-white hover:underline hover:decoration-white cursor-pointer tracking-tightest">
+                            <p className="font-istok xl:text-base text-sm text-slate_300 hover:text-white hover:underline hover:decoration-white cursor-pointer tracking-tightest w-fit">
                                 About us
                             </p>
-                            <p className="font-istok xl:text-base text-sm text-slate_300 hover:text-white hover:underline hover:decoration-white cursor-pointer tracking-tightest">
+                            <p className="font-istok xl:text-base text-sm text-slate_300 hover:text-white hover:underline hover:decoration-white cursor-pointer tracking-tightest w-fit">
                                 Contacts
                             </p>
                         </div>
@@ -59,16 +62,16 @@ export const Footer: React.FC<FooterProps> = (props) => {
                             <p className="font-istok font-bold xl:text-xl text-base text-white tracking-tightest">
                                 Services
                             </p>
-                            <p className="font-istok xl:text-base text-sm text-slate_300 hover:text-white hover:underline hover:decoration-white cursor-pointer tracking-tightest">
+                            <p className="font-istok xl:text-base text-sm text-slate_300 hover:text-white hover:underline hover:decoration-white cursor-pointer tracking-tightest w-fit">
                                 Redesign your website
                             </p>
-                            <p className="font-istok xl:text-base text-sm text-slate_300 hover:text-white hover:underline hover:decoration-white cursor-pointer tracking-tightest">
+                            <p className="font-istok xl:text-base text-sm text-slate_300 hover:text-white hover:underline hover:decoration-white cursor-pointer tracking-tightest w-fit">
                                 Web design and UI
                             </p>
-                            <p className="font-istok xl:text-base text-sm text-slate_300 hover:text-white hover:underline hover:decoration-white cursor-pointer tracking-tightest">
+                            <p className="font-istok xl:text-base text-sm text-slate_300 hover:text-white hover:underline hover:decoration-white cursor-pointer tracking-tightest w-fit">
                                 UX design
                             </p>
-                            <p className="font-istok xl:text-base text-sm text-slate_300 hover:text-white hover:underline hover:decoration-white cursor-pointer tracking-tightest">
+                            <p className="font-istok xl:text-base text-sm text-slate_300 hover:text-white hover:underline hover:decoration-white cursor-pointer tracking-tightest w-fit">
                                 Web development
                             </p>
                         </div>
