@@ -165,7 +165,7 @@ export const Home: React.FC = () => {
                 </div>
                 <div className="flex flex-col">
                     <p className="font-inter 2xl:text-5xl xl:text-4xl text-3xl font-bold leading-none text-section_best pl-7 mt-1">
-                        best
+                        the best
                     </p>
                     <p className="text-center font-junge 2xl:text-64 xl:text-5xl text-4xl text-section_websites py-3">
                         websites
@@ -763,7 +763,7 @@ export const Home: React.FC = () => {
                                         </div>
                                     </div>
                                     <div className="flex flex-col justify-end items-center pt-10">
-                                        <div className="b_xl:h-[490px] lg:h-[400px] xs:h-[350px] b_xl:w-[450px] lg:w-[260px] xs:w-[230px] w-[200px]">
+                                        <div className="b_xl:h-[490px] lg:h-[300px] xs:h-[260px] b_xl:w-[450px] lg:w-[260px] xs:w-[230px] w-[200px]">
                                             <img
                                                 src={item.img}
                                                 className="h-full w-full"
