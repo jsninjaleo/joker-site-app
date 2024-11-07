@@ -50,7 +50,7 @@ import {
 const opts = {
     width: "100%",
     height: "100%",
-    playerVars: { autoplay: 1 },
+    playerVars: { autoplay: 0 },
 };
 
 export const Home: React.FC = () => {
