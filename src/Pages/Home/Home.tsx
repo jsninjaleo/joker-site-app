@@ -492,7 +492,7 @@ export const Home: React.FC = () => {
                                     className="h-full"
                                     opts={opts}
                                     onReady={videoReady}
-                                    videoId="hGKM7jO4qK8"
+                                    videoId="LpvypuuNZcE"
                                 />
                             </div>
                         </div>
